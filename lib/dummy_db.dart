@@ -20,4 +20,10 @@ class DummyDb {
     {"color": Color.fromARGB(206, 19, 205, 5), "text": "Melody"},
     {"color": Color.fromARGB(205, 42, 211, 104), "text": "Clasic"},
   ];
+  static List<Map<String, dynamic>> libraryList = [
+    {"color": Colors.blue},
+    {"color": Colors.deepOrange},
+    {"color": Colors.indigo},
+    {"color": Colors.red}
+  ];
 }

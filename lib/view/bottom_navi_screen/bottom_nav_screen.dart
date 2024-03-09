@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/core/constants/color_constants.dart';
-import 'package:spotify_clone/profile_screen/profile_screen.dart';
+
 import 'package:spotify_clone/view/home_screen/home_screen.dart';
+import 'package:spotify_clone/view/profile_screen/profile_screen.dart';
 import 'package:spotify_clone/view/search_screen/search_screen.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -16,10 +17,10 @@ class BottomNavScreen extends StatefulWidget {
 class _BottomNavScreenState extends State<BottomNavScreen> {
   List<Widget> screenList = [
     HomeScreen(),
-    SearchScreen(text: "text",),
-    Container(
-      color: Colors.lime,
-    )
+    SearchScreen(
+      text: "text",
+    ),
+    ProfileScreen(),
   ];
   int selectedIndex = 0;
 
@@ -30,7 +31,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: ColorConstants.primaryBlack,
           onTap: (value) {
-            if (value != 2) {
+            if (value != 3) {
               selectedIndex = value;
               setState(() {});
             } else {
