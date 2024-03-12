@@ -21,15 +21,18 @@ class Cards extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               Container(
-                height: 150,
-                width: 130,
-                decoration: BoxDecoration(color: ColorConstants.primaryBlack),
+                height: 160,
+                width: 140,
+                decoration: BoxDecoration(
+                  color: ColorConstants.primaryBlack,
+                ),
                 child: Container(
                   padding:
-                      EdgeInsets.only(bottom: 30, left: 5, right: 5, top: 5),
+                      EdgeInsets.only(bottom: 30, left: 8, right: 8, top: 5),
                   decoration: BoxDecoration(color: ColorConstants.primaryBlack),
                   child: Container(
                     decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(

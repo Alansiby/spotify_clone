@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_import
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:spotify_clone/core/constants/color_constants.dart';
 import 'package:spotify_clone/dummy_db.dart';
@@ -29,13 +31,28 @@ class _SearchScreenState extends State<SearchScreen> {
             child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=600",
+                      ),
+                    ),
                     Text(
                       "Search",
                       style: TextStyle(
                           color: ColorConstants.primaryWhite,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(width: 100),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.camera_alt_outlined,
+                          color: ColorConstants.primaryWhite,
+                        ),
+                      ],
                     ),
                   ],
                 ),

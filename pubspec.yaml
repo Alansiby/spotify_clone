@@ -62,6 +62,8 @@ flutter:
   assets:
     - assets/images/SpotifyLogo.png
     - assets/images/SpotifypreviewLogo.png
+    - assets/images/spotifylogoA.png
+    - assets/images/ArianaGrande.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

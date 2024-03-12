@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/core/constants/color_constants.dart';
 import 'package:spotify_clone/core/constants/image_constants.dart';
 import 'package:spotify_clone/view/login_page/login_page.dart';
 
@@ -27,8 +28,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(222, 22, 22, 22),
       body: Center(
-        child: Image.asset(ImageConstants.appIconpng),
+        child: Image.asset(
+          ImageConstants.appIconApng,
+        ),
       ),
     );
   }

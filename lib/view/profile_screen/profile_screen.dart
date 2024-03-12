@@ -69,7 +69,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   SizedBox(
-                    width: 30,
+                    width: 20,
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -82,7 +82,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       padding: const EdgeInsets.only(
                           left: 10, right: 10, bottom: 5, top: 5),
                       child: Text(
-                        "Play List",
+                        "Artist",
                         style: TextStyle(
                             color:
                                 ColorConstants.primaryWhite.withOpacity(0.5)),

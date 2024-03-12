@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:spotify_clone/core/constants/color_constants.dart';
+import 'package:spotify_clone/core/constants/image_constants.dart';
 import 'package:spotify_clone/dummy_db.dart';
+import 'package:spotify_clone/globel_widget/music_player.dart';
 import 'package:spotify_clone/view/home_screen/widget/cards.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: ColorConstants.primaryBlack,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.only(right: 10, left: 10),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -26,14 +28,18 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Good Morning",
+                      "Welcome To",
                       style: TextStyle(
                           color: ColorConstants.primaryWhite,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
+                    Image.asset(
+                      ImageConstants.appIconpng,
+                      scale: 6,
+                    ),
                     SizedBox(
-                      width: 40,
+                      width: 10,
                     ),
                     Icon(
                       Icons.notifications,
@@ -54,11 +60,19 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Row(
                   children: [
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        "https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=600",
+                      ),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
                     Container(
                       decoration: BoxDecoration(
-                          color: ColorConstants.primaryBlack,
+                          color: Color.fromARGB(255, 63, 202, 25),
                           border: Border.all(
-                            color: ColorConstants.primaryWhite.withOpacity(0.5),
+                            color: ColorConstants.primaryWhite,
                           ),
                           borderRadius: BorderRadius.circular(25)),
                       child: Padding(
@@ -73,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 15,
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -151,7 +165,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
                 Row(
                   children: [
@@ -181,7 +195,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
                 Row(
                   children: [
@@ -211,7 +225,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
                 Row(
                   children: [
@@ -241,7 +255,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
                 Row(
                   children: [
@@ -265,6 +279,36 @@ class HomeScreen extends StatelessWidget {
                             (index) => Cards(
                                 text: DummyDb.coverPicList5[index]["text"],
                                 coverpic: DummyDb.coverPicList5[index]
+                                    ["coverpic"])),
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Pop",
+                      style: TextStyle(
+                        color: ColorConstants.primaryWhite,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: List.generate(
+                            DummyDb.coverPicList6.length,
+                            (index) => Cards(
+                                text: DummyDb.coverPicList6[index]["text"],
+                                coverpic: DummyDb.coverPicList6[index]
                                     ["coverpic"])),
                       ),
                     )

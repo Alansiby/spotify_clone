@@ -57,7 +57,12 @@ class DummyDb {
       "text": "Jr.",
       "coverpic":
           "https://images.pexels.com/photos/214574/pexels-photo-214574.jpeg?auto=compress&cs=tinysrgb&w=600"
-    }
+    },
+    {
+      "text": "Akhil",
+      "coverpic":
+          "https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
   ];
   static List<Map<String, dynamic>> coverPicList2 = [
     {
@@ -89,6 +94,11 @@ class DummyDb {
       "text": "LIte Music",
       "coverpic":
           "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "text": "Akhil",
+      "coverpic":
+          "https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
   ];
   static List<Map<String, dynamic>> coverPicList3 = [
@@ -122,6 +132,11 @@ class DummyDb {
       "coverpic":
           "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
+    {
+      "text": "Akhil",
+      "coverpic":
+          "https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
   ];
   static List<Map<String, dynamic>> coverPicList4 = [
     {
@@ -154,6 +169,11 @@ class DummyDb {
       "coverpic":
           "https://images.pexels.com/photos/6270136/pexels-photo-6270136.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
+    {
+      "text": "Akhil",
+      "coverpic":
+          "https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
   ];
   static List<Map<String, dynamic>> coverPicList5 = [
     {
@@ -185,6 +205,48 @@ class DummyDb {
       "text": "Japanise",
       "coverpic":
           "https://images.pexels.com/photos/598917/pexels-photo-598917.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "text": "Akhil",
+      "coverpic":
+          "https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+  ];
+  static List<Map<String, dynamic>> coverPicList6 = [
+    {
+      "text": "Hindi",
+      "coverpic":
+          "https://images.pexels.com/photos/7086304/pexels-photo-7086304.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "text": "English",
+      "coverpic":
+          "https://images.pexels.com/photos/5650905/pexels-photo-5650905.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "text": "Malayalan",
+      "coverpic":
+          "https://images.pexels.com/photos/5934342/pexels-photo-5934342.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "text": "Tamil",
+      "coverpic":
+          "https://images.pexels.com/photos/5650903/pexels-photo-5650903.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "text": "Russian",
+      "coverpic":
+          "https://images.pexels.com/photos/7020687/pexels-photo-7020687.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "text": "Japanise",
+      "coverpic":
+          "https://images.pexels.com/photos/598917/pexels-photo-598917.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "text": "Akhil",
+      "coverpic":
+          "https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
   ];
 }
