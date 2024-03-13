@@ -161,7 +161,7 @@ class HomeScreen extends StatelessWidget {
                                 coverpic: DummyDb.coverPicList1[index]
                                     ["coverpic"])),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 SizedBox(

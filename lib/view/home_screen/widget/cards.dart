@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/core/constants/color_constants.dart';
+import 'package:spotify_clone/globel_widget/music_player.dart';
 
 class Cards extends StatelessWidget {
   const Cards({
@@ -26,18 +27,25 @@ class Cards extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: ColorConstants.primaryBlack,
                 ),
-                child: Container(
-                  padding:
-                      EdgeInsets.only(bottom: 30, left: 8, right: 8, top: 5),
-                  decoration: BoxDecoration(color: ColorConstants.primaryBlack),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MusicPlayer()));
+                  },
                   child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: NetworkImage(
-                              coverpic,
-                            ))),
+                    padding:
+                        EdgeInsets.only(bottom: 30, left: 8, right: 8, top: 5),
+                    decoration:
+                        BoxDecoration(color: ColorConstants.primaryBlack),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                coverpic,
+                              ))),
+                    ),
                   ),
                 ),
               ),

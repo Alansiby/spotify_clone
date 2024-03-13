@@ -1,10 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:spotify_clone/core/constants/color_constants.dart';
 import 'package:spotify_clone/core/constants/image_constants.dart';
+import 'package:spotify_clone/view/home_screen/home_screen.dart';
 
 class MusicPlayer extends StatefulWidget {
   MusicPlayer({
@@ -16,7 +19,9 @@ class MusicPlayer extends StatefulWidget {
 }
 
 class _MusicPlayerState extends State<MusicPlayer> {
-  int values = 0;
+  double currentSliderValue = 0;
+  // double? _dragValue;
+  // int values = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +30,15 @@ class _MusicPlayerState extends State<MusicPlayer> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: ColorConstants.primaryBlack,
-        leading: Icon(
-          Icons.keyboard_arrow_down_sharp,
-          color: ColorConstants.primaryWhite,
+        leading: InkWell(
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          },
+          child: Icon(
+            Icons.keyboard_arrow_down_sharp,
+            color: ColorConstants.primaryWhite,
+          ),
         ),
         title: Text(
           "Playing From Play List",
@@ -41,7 +52,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.only(right: 15, left: 15),
+        padding: const EdgeInsets.only(right: 15, left: 15, bottom: 10),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -91,17 +102,24 @@ class _MusicPlayerState extends State<MusicPlayer> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Slider(
-                      value: values.toDouble(),
-                      min: 0,
-                      max: 200,
-                      activeColor: Colors.green,
-                      inactiveColor: Colors.white,
-                      onChanged: (double newValue) {
-                        setState(() {
-                          values = newValue.round();
-                        });
-                      })
+                  Expanded(
+                    child: SliderTheme(
+                        data: SliderTheme.of(context).copyWith(
+                            trackHeight: 3,
+                            thumbShape: RoundSliderThumbShape(
+                                disabledThumbRadius: 4, enabledThumbRadius: 6)),
+                        child: Slider(
+                            value: currentSliderValue,
+                            min: 0,
+                            max: 200,
+                            activeColor: Colors.green,
+                            inactiveColor: Colors.white,
+                            onChanged: (value) {
+                              setState(() {
+                                currentSliderValue = value;
+                              });
+                            })),
+                  ),
                 ],
               ),
               Row(
@@ -136,10 +154,18 @@ class _MusicPlayerState extends State<MusicPlayer> {
                     Icons.skip_previous_sharp,
                     color: ColorConstants.primaryWhite,
                   ),
-                  Icon(
-                    Icons.play_circle_fill_sharp,
-                    color: ColorConstants.primaryWhite,
-                  ),
+                  IconButton(
+                      iconSize: 50,
+                      onPressed: null,
+                      icon: Container(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: ColorConstants.shinyGreen),
+                        child: Icon(
+                          Icons.stop,
+                          color: ColorConstants.primaryWhite,
+                        ),
+                      )),
                   Icon(
                     Icons.skip_next_sharp,
                     color: ColorConstants.primaryWhite,
