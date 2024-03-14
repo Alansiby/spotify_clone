@@ -1,13 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:spotify_clone/core/constants/color_constants.dart';
 import 'package:spotify_clone/core/constants/image_constants.dart';
 import 'package:spotify_clone/view/home_screen/home_screen.dart';
+
+import 'package:audioplayers/audioplayers.dart';
 
 class MusicPlayer extends StatefulWidget {
   MusicPlayer({
@@ -20,6 +20,7 @@ class MusicPlayer extends StatefulWidget {
 
 class _MusicPlayerState extends State<MusicPlayer> {
   double currentSliderValue = 0;
+  AudioPlayer audioPlayer = AudioPlayer();
   // double? _dragValue;
   // int values = 0;
 
@@ -52,7 +53,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.only(right: 15, left: 15, bottom: 10),
+        padding: const EdgeInsets.only(right: 12, left: 12, bottom: 10),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -161,9 +162,16 @@ class _MusicPlayerState extends State<MusicPlayer> {
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: ColorConstants.shinyGreen),
-                        child: Icon(
-                          Icons.stop,
-                          color: ColorConstants.primaryWhite,
+                        child: InkWell(
+                          onTap: () {
+                            
+                          },
+                          // onTap: () => AudioPlayer()
+                          //     .play(AssetSource("assets/audio/song1.mp3")),
+                          child: Icon(
+                            Icons.stop,
+                            color: ColorConstants.primaryWhite,
+                          ),
                         ),
                       )),
                   Icon(
